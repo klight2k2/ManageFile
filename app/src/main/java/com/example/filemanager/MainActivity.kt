@@ -278,10 +278,11 @@ class MainActivity : AppCompatActivity() {
                     intent.action = Intent.ACTION_VIEW
                     val type = "image/*"
                     intent.setDataAndType(Uri.parse(selectedFile.absolutePath), type)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
                 }
 
-//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//                startActivity(intent)
+
             } catch (e: Exception) {
                 Log.v("my",e.stackTraceToString())
                 Toast.makeText(
